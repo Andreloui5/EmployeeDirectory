@@ -4,7 +4,11 @@ import Tbody from './Tbody';
 
 function Table(props) {
   return(
+    
     <table>
+    
+    {console.log(props)}
+
       <Thead
       sortByFirstName={props.sortByFirstName}
       sortByLastName={props.sortByLastName}
@@ -17,7 +21,7 @@ function Table(props) {
         email={props.email}
         phone={props.phone}
         age={props.age}
-        filtered={props.state.filtered}
+        filtered={props.filtered}
       />
     </table>
   )
