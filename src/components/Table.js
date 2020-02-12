@@ -5,10 +5,7 @@ import Tbody from './Tbody';
 function Table(props) {
   return(
     
-    <table>
-    
-    {console.log(props)}
-
+    <table className="col-s-12">
       <Thead
       sortByFirstName={props.sortByFirstName}
       sortByLastName={props.sortByLastName}

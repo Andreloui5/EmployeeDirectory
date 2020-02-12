@@ -5,7 +5,7 @@ function Jumbotron(props) {
   return (
     <div className="jumbotron jumbotron-fluid">
       <div className="container">
-        <h1 className="display-4">Employee Directory</h1>
+        <h1 className="display-4 text-center">Employee Directory</h1>
         <form className="search">
           <div className="form-group">
             <label htmlFor="language">Search Term:</label>

@@ -25,16 +25,16 @@ class MainPage extends React.Component {
     })
   }
 
-  //map through the array people and filter...
-  // searchByFirstName = () => {
-  //   let sorted = this.state.people.filter(
-  //     (person) => {
-  //       // returns all people with values that it can find
-  //       return this.state.people.results.name.first.indexOf(this.state.search) !== -1
-  //     })
-  //     // sets state of filtered to include returned items from filter
-  //   this.setState({filtered: [sorted]})
-  // }
+  // map through the array people and filter...
+  searchByFirstName = () => {
+    let sorted = this.state.people.filter(
+      (person) => {
+        // returns all people with values that it can find
+        return this.state.people.results.name.first.indexOf(this.state.search) !== -1
+      })
+      // sets state of filtered to include returned items from filter
+    this.setState({filtered: [sorted]})
+  }
 
   sortByFirstName = () => {
   
@@ -55,7 +55,7 @@ class MainPage extends React.Component {
     this.setState({
       [search]: value
     });
-    this.getPeople(this.state.search)
+    evt.getPeople(search)
   }
 
   render() {
@@ -63,8 +63,8 @@ class MainPage extends React.Component {
       <div className= "container">
 
         <Jumbotron>
-          search = {this.state.search}
-          onChangeHandler = {this.onChangeHandler}
+          search={this.state.search}
+          onChangeHandler={this.onChangeHandler}
         </Jumbotron>
         <Table
           onClick={this.sortByFirstName}
