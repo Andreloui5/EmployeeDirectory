@@ -3,7 +3,13 @@ import React from 'react'
 function Tbody(props){
   return (
     props.filtered.map((item, i) => (
-      <TrBody key={i}>item</TrBody>
+      <tr key={i}>
+        <td>{item.firstName}</td>
+        <td>{item.lastName}</td>
+        <td>{item.email}</td>
+        <td>{item.phone}</td>
+        <td>{item.age}</td>
+      </tr>
     ))
   )
 }
