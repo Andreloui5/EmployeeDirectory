@@ -6,12 +6,7 @@ class MainPage extends React.Component {
   state = {
     people: [],
     filtered: [],
-    sortAsc: false,
     search: ""
-  }
-
-  getRandomPeople = () => {
-
   }
 
   //When the component mounts
@@ -20,11 +15,14 @@ class MainPage extends React.Component {
     .then(res => this.setState({people: res.results}))
   }
 
-  //map through the array people and filter
+  //map through the array people and filter...
   sortByFirstName = () => {
-    
-
-    this.setState({filtered: sorted})
+    let sorted = this.state.people.filter(
+      (person) => {
+        // returns all people with values that it can find
+        return person.firstName.indexOf(this.state.search) !== -1
+      })
+    this.setState({filtered: [sorted]})
   }
 
   sortByLastName = () => {
@@ -35,6 +33,7 @@ class MainPage extends React.Component {
 
   }
 
+  // Whenver a user types a character in the search box, we update our state
   onChangeHandler = evt => {
     const search = evt.target.search;
     const value = evt.target.value;
