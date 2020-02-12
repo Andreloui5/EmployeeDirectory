@@ -25,3 +25,5 @@ function Jumbotron(props) {
     </div>
   )
 }
+
+export default Jumbotron;

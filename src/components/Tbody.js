@@ -3,7 +3,7 @@ import React from 'react'
 function Tbody(props){
   return (
     // maps through the filtered state, and produces results on the page
-    props.filtered.map((item, i) => (
+    props.state.filtered.map((item, i) => (
       <tr key={i}>
         <td>{item.firstName}</td>
         <td>{item.lastName}</td>
@@ -14,3 +14,4 @@ function Tbody(props){
     ))
   )
 }
+export default Tbody;

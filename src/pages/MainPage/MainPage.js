@@ -1,5 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import API from "axios";
+import Jumbotron from '../../components/Jumbotron';
+import Table from '../../components/Table';
+
+
+
+
 
 class MainPage extends React.Component {
 
@@ -16,13 +22,18 @@ class MainPage extends React.Component {
   }
 
   //map through the array people and filter...
-  sortByFirstName = () => {
+  searchByFirstName = () => {
     let sorted = this.state.people.filter(
       (person) => {
         // returns all people with values that it can find
-        return person.firstName.indexOf(this.state.search) !== -1
+        return this.state.people.results.name.first.indexOf(this.state.search) !== -1
       })
+      // sets state of filtered to include returned items from filter
     this.setState({filtered: [sorted]})
+  }
+
+  sortByFirstName = () => {
+  
   }
 
   sortByLastName = () => {
@@ -45,7 +56,7 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      <Container>
+      <div className= "container">
         <Jumbotron>
           search = {this.state.search}
           onChangeHandler = {this.onChangeHandler}
@@ -56,7 +67,7 @@ class MainPage extends React.Component {
           onClick={this.sortByAge}
           filtered={this.state.filtered}
         </Table>
-      </Container>
+      </div>
     )
   }
 }

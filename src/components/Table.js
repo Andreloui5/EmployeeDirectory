@@ -17,7 +17,9 @@ function Table(props) {
         email={props.email}
         phone={props.phone}
         age={props.age}
+        filtered={props.state.filtered}
       />
     </table>
   )
 }
+export default Table;
